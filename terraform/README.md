@@ -43,10 +43,41 @@ This project provides a quick way to set up a SOCKS5 proxy using a DigitalOcean 
 
 ### Configure Your Applications
 
-Configure your applications to use the SOCKS5 proxy:
-- Host: localhost
-- Port: 12345
-- Protocol: SOCKS5
+Here's how to configure different browsers to use the SOCKS5 proxy:
+
+#### Chrome
+1. Open Settings
+2. Search for "proxy" and click "Open your computer's proxy settings"
+3. On macOS:
+   - Click "Network" in System Settings
+   - Select your active connection
+   - Click "Details..."
+   - Select "Proxies" tab
+   - Enable "SOCKS Proxy"
+   - Enter "localhost" for server and "12345" for port
+   - Click "OK" and "Apply"
+
+#### Firefox
+1. Open Settings/Preferences
+2. Search for "proxy" or scroll to Network Settings
+3. Click "Settings..."
+4. Select "Manual proxy configuration"
+5. Enter "localhost" in "SOCKS Host" and "12345" for "Port"
+6. Select "SOCKS v5"
+7. Check "Proxy DNS when using SOCKS v5"
+8. Click "OK"
+
+#### Safari
+1. Open System Settings
+2. Click "Network"
+3. Select your active connection
+4. Click "Details..."
+5. Select "Proxies" tab
+6. Enable "SOCKS Proxy"
+7. Enter "localhost" for server and "12345" for port
+8. Click "OK" and "Apply"
+
+Note: For Chrome and Safari on macOS, the proxy settings are shared as they both use the system's network settings.
 
 ### Destroy the Infrastructure
 
