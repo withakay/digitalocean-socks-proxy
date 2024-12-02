@@ -1,0 +1,8 @@
+#cloud-config
+groups:
+  - ubuntu: [root, sys]
+
+ssh_pwauth: False
+
+runcmd:
+  - sudo apt-get update
