@@ -17,9 +17,10 @@ apply: init
 
 # Destroy the infrastructure and cleanup
 destroy: init
-	terraform destroy -var-file="terraform.tfvars"
 	@chmod +x scripts/cleanup.sh
-	@./scripts/cleanup.sh
+	@IP_ADDRESS=$$(terraform output -raw ip_address) && \
+	./scripts/cleanup.sh "$$IP_ADDRESS" && \
+	terraform destroy -var-file="terraform.tfvars"
 
 # Create SOCKS5 proxy using the droplet's IP
 proxy:
