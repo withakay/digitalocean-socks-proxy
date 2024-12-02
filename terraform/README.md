@@ -81,10 +81,13 @@ Note: For Chrome and Safari on macOS, the proxy settings are shared as they both
 
 ### Destroy the Infrastructure
 
-When you're done, destroy the droplet to stop incurring charges:
+When you're done, destroy the droplet and clean up:
 ```bash
 make destroy
 ```
+This will:
+1. Destroy the DigitalOcean droplet
+2. Remove the droplet's IP address from your `~/.ssh/known_hosts` file
 
 ## Security Features
 

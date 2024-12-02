@@ -15,9 +15,11 @@ plan: init
 apply: init
 	terraform apply -var-file="terraform.tfvars"
 
-# Destroy the infrastructure
+# Destroy the infrastructure and cleanup
 destroy: init
 	terraform destroy -var-file="terraform.tfvars"
+	@chmod +x scripts/cleanup.sh
+	@./scripts/cleanup.sh
 
 # Create SOCKS5 proxy using the droplet's IP
 proxy:
